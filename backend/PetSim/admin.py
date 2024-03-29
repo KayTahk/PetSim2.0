@@ -1,10 +1,15 @@
 from django.contrib import admin
-from .models import petSim
+from .models import userPet, petBreed
 # Register your models here.
+
+class PetBreedAdmin(admin.ModelAdmin):
+    list_display = ('breedName', 'description', 'image')
+
+admin.site.register(petBreed, PetBreedAdmin)
 
 class PetSimAdmin(admin.ModelAdmin):
-    list_display = ('petName', 'petBreed')
+    list_display = ('petName', 'petBreed', 'userInfo')
 
 # Register your models here.
 
-admin.site.register(petSim, PetSimAdmin)
+admin.site.register(userPet, PetSimAdmin)

@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import petSim
+from .models import userPet, petBreed
 
-class PetSimSerializer(serializers.ModelSerializer):
+class userPetSerializer(serializers.ModelSerializer):
     class Meta:
-        model = petSim
+        model = userPet
         fields = ('petName', 'petBreed')
+
+class petBreedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = petBreed
+        fields = ('breedName', 'description', 'image')

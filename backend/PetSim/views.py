@@ -1,11 +1,15 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .serializers import PetSimSerializer
-from .models import petSim
+from .serializers import userPetSerializer, petBreedSerializer
+from .models import userPet, petBreed
 
 # Create your views here.
 
-class PetSimView(viewsets.ModelViewSet):
-    serializer_class = PetSimSerializer
-    queryset = petSim.objects.all()
+class userPetView(viewsets.ModelViewSet):
+    serializer_class = userPetSerializer
+    queryset = userPet.objects.all()
+
+class petBreedView(viewsets.ModelViewSet):
+    serializer_class = petBreedSerializer
+    queryset = petBreed.objects.all()
