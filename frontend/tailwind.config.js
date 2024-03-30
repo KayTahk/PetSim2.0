@@ -6,7 +6,20 @@ module.exports = withMT({
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["Mulish", "sans-serif"],
+      serif: ["Hachi Maru Pop", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        'bubblegum': '#FCE1E4',
+        'lilac': '#E8DFF5',
+        'dark': '#404565',
+        'light': '#FEFDFB',
+        'sky': '#DAEAF6',
+        'banana': '#FCF4DE',
+      },
+    },
   },
   plugins: [],
 })
