@@ -1,13 +1,16 @@
 import React from "react";
-import PetsList from "./components/petlist";
-import Nav from './components/navbar'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Login from './components/login';
+import PetsList from './components/petlist';
+import Nav from "./components/navbar";
 
 function App() {
   return (
     <div>
-      <Nav />
-      <PetsList />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<><Nav /><PetsList /></>} />
+      </Routes>
     </div>
   );
 }
