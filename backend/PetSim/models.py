@@ -46,13 +46,14 @@ class Facility(models.Model):
     intelligence_boost = models.IntegerField(default=0)
 
 class Task(models.Model):
+    name = models.CharField(max_length=100, unique=True)
     progress = models.IntegerField()
     progress_needed = models.IntegerField()
     difficulty = models.IntegerField()
-    skillset = models.CharField(max_length=100)
-    stat1 = models.CharField(max_length=100)
-    stat2 = models.CharField(max_length=100)
-    condition = models.CharField(max_length=100)        
+    skillset = models.ForeignKey(petBreed, on_delete=models.CASCADE, to_field='breedName')
+    stat1 = models.CharField(max_length=100, blank=True, null=True)
+    stat2 = models.CharField(max_length=100, blank=True, null=True)
+    condition = models.CharField(max_length=100, blank=True, null=True)        
 
 @receiver(post_save, sender=User)
 def create_user_pet(sender, instance, created, **kwargs):

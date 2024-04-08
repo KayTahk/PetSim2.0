@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import userPet, petBreed, Employee
-
+from .models import userPet, petBreed, Employee, Task
 
 # Register your models here.
 class PetBreedAdmin(admin.ModelAdmin):
@@ -19,3 +18,9 @@ class EmployeeAdmin(admin.ModelAdmin):
     'intelligence_growth', 'charisma', 'charisma_growth')
 
 admin.site.register(Employee, EmployeeAdmin)
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('name', 'progress', 'progress_needed', 'difficulty', 'skillset', 'stat1', 'stat2', 
+        'condition')
+
+admin.site.register(Task, TaskAdmin)
