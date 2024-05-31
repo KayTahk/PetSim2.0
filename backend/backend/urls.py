@@ -24,6 +24,8 @@ from django.conf.urls.static import static
 router = routers.DefaultRouter()
 router.register(r'userpet', views.userPetView, 'User Pet')
 router.register(r'petbreed', views.petBreedView, 'Pet Breeds')
+router.register(r'employee', views.employeeView, 'Employee')
+router.register(r'task', views.taskView, 'Task')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
